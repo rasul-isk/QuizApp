@@ -12,9 +12,9 @@ public class DaoQuestionTest {
 
     private DaoQuestion daoQuestion;
     //config file
-    private final String url = "jdbc:mysql://localhost:3306/quiz_app";
-    private final String username = "root";
-    private final String password = "";
+    private final String url = System.getenv("DB_URL");
+    private final String username = System.getenv("DB_USER");
+    private final String password = System.getenv("DB_PASSWORD");
 
     @Before
     public void setUp() throws SQLException {
@@ -34,7 +34,7 @@ public class DaoQuestionTest {
 
         daoQuestion.saveQuestion(question);
 
-        Question foundQuestion = daoQuestion.searchQuestionByTopic(question.getTopic()).stream()
+        Question foundQuestion = daoQuestion.searchQuestionByTopic(question.topic()).stream()
                 .findFirst()
                 .orElse(null);
 
@@ -58,7 +58,7 @@ public class DaoQuestionTest {
 
         daoQuestion.updateQuestion(newQuestion);
 
-        Question retrievedQuestion = daoQuestion.searchQuestionByTopic(newQuestion.getTopic()).stream()
+        Question retrievedQuestion = daoQuestion.searchQuestionByTopic(newQuestion.topic()).stream()
                 .findFirst()
                 .orElse(null);
 
@@ -77,7 +77,7 @@ public class DaoQuestionTest {
 
         daoQuestion.deleteQuestion(question);
 
-        Question retrievedQuestion = daoQuestion.searchQuestionByTopic(question.getTopic()).stream()
+        Question retrievedQuestion = daoQuestion.searchQuestionByTopic(question.topic()).stream()
                 .findFirst()
                 .orElse(null);
 
@@ -109,5 +109,6 @@ public class DaoQuestionTest {
     @After
     public void clean() throws SQLException {
         daoQuestion.deleteAllRows();
+        daoQuestion.close();
     }
 }

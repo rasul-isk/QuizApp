@@ -1,27 +1,18 @@
 package org.example;
 
-import org.example.model.DaoQuestion;
-import org.example.model.Question;
-import org.example.model.Response;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 
 public class Main {
+    private static final String url = System.getenv("DB_URL");
+    private static final String username = System.getenv("DB_USER");
+    private static final String password = System.getenv("DB_PASSWORD");
     public static void main(String[] args) {
 
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            //config file
-            String url = "jdbc:mysql://localhost:3306/quiz_app";
-            String username = "root";
-            String password = "";
 
             Connection connection = DriverManager.getConnection(url, username, password);
 

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DaoQuestion {
-    private Connection connection;
+    private final Connection connection;
 
     public DaoQuestion(Connection connection) {
         this.connection = connection;
@@ -15,20 +15,20 @@ public class DaoQuestion {
         PreparedStatement statement = connection.prepareStatement(
                 "INSERT INTO question (id, topic, difficultyRank, content) VALUES (?, ?, ?, ?)"
         );
-        statement.setInt(1, question.getId());
-        statement.setString(2, question.getTopic());
-        statement.setInt(3, question.getDifficultyRank());
-        statement.setString(4, question.getContent());
+        statement.setInt(1, question.id());
+        statement.setString(2, question.topic());
+        statement.setInt(3, question.difficultyRank());
+        statement.setString(4, question.content());
         statement.executeUpdate();
 
-        for (Response response : question.getResponses()) {
+        for (Response response : question.responses()) {
             PreparedStatement responseStatement = connection.prepareStatement(
                     "INSERT INTO response (id, question_id, text, correct) VALUES (?, ?, ?, ?)"
             );
-            responseStatement.setInt(1, response.getId());
-            responseStatement.setInt(2, question.getId());
-            responseStatement.setString(3, response.getText());
-            responseStatement.setBoolean(4, response.isCorrect());
+            responseStatement.setInt(1, response.id());
+            responseStatement.setInt(2, question.id());
+            responseStatement.setString(3, response.text());
+            responseStatement.setBoolean(4, response.correct());
             responseStatement.executeUpdate();
         }
     }
@@ -37,26 +37,26 @@ public class DaoQuestion {
         PreparedStatement statement = connection.prepareStatement(
                 "UPDATE question SET topic=?, difficultyRank=?, content=? WHERE id=?"
         );
-        statement.setString(1, question.getTopic());
-        statement.setInt(2, question.getDifficultyRank());
-        statement.setString(3, question.getContent());
-        statement.setInt(4, question.getId());
+        statement.setString(1, question.topic());
+        statement.setInt(2, question.difficultyRank());
+        statement.setString(3, question.content());
+        statement.setInt(4, question.id());
         statement.executeUpdate();
 
         PreparedStatement deleteResponseStatement = connection.prepareStatement(
                 "DELETE FROM response WHERE question_id=?"
         );
-        deleteResponseStatement.setInt(1, question.getId());
+        deleteResponseStatement.setInt(1, question.id());
         deleteResponseStatement.executeUpdate();
 
-        for (Response response : question.getResponses()) {
+        for (Response response : question.responses()) {
             PreparedStatement responseStatement = connection.prepareStatement(
                     "INSERT INTO response (id, question_id, text, correct) VALUES (?, ?, ?, ?)"
             );
-            responseStatement.setInt(1, response.getId());
-            responseStatement.setInt(2, question.getId());
-            responseStatement.setString(3, response.getText());
-            responseStatement.setBoolean(4, response.isCorrect());
+            responseStatement.setInt(1, response.id());
+            responseStatement.setInt(2, question.id());
+            responseStatement.setString(3, response.text());
+            responseStatement.setBoolean(4, response.correct());
             responseStatement.executeUpdate();
         }
     }
@@ -65,13 +65,13 @@ public class DaoQuestion {
         PreparedStatement deleteResponseStatement = connection.prepareStatement(
                 "DELETE FROM response WHERE question_id=?"
         );
-        deleteResponseStatement.setInt(1, question.getId());
+        deleteResponseStatement.setInt(1, question.id());
         deleteResponseStatement.executeUpdate();
 
         PreparedStatement statement = connection.prepareStatement(
                 "DELETE FROM question WHERE id=?"
         );
-        statement.setInt(1, question.getId());
+        statement.setInt(1, question.id());
         statement.executeUpdate();
     }
 

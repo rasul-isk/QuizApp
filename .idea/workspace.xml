@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9cbea11c-a693-482f-9e54-7bcbba966910" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/model/DaoQuestionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Relevant files/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/DaoQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/DaoQuestion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Question.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/model/DaoQuestionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/model/DaoQuestionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +36,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2Np8GJymfjQ4I2Uk2KnYhHE9ixL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -59,7 +67,8 @@
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "sqlserver.localdb"
+      "sqlserver.localdb",
+      "mysql"
     ]
   }
 }]]></component>
@@ -67,12 +76,20 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Everything\Programming\Java\QuizApp\src\main\resources" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="org.example.model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.org.example.Main">
+    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="DB_URL" value="jdbc:mysql://localhost:3306/quiz_app" />
+        <env name="DB_USER" value="root" />
+        <env name="DB_PASSWORD" value="" />
+      </envs>
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="QuizApp" />
       <extension name="coverage">
@@ -80,6 +97,16 @@
           <option name="PATTERN" value="org.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,16 +120,36 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
       <option name="PACKAGE_NAME" value="org.example.model" />
       <option name="MAIN_CLASS_NAME" value="org.example.model.DaoQuestionTest" />
+      <option name="METHOD_NAME" value="" />
       <option name="TEST_OBJECT" value="class" />
+      <envs>
+        <env name="DB_URL" value="jdbc:mysql://localhost:3306/quiz_app" />
+        <env name="DB_USER" value="root" />
+        <env name="DB_PASSWORD" value="" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.org.example.Main" />
+      <item itemvalue="JUnit.DaoQuestionTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.org.example.Main" />
         <item itemvalue="JUnit.DaoQuestionTest" />
       </list>
     </recent_temporary>
@@ -116,7 +163,8 @@
       <option name="presentableId" value="Default" />
       <updated>1680349567831</updated>
       <workItem from="1680349570175" duration="1918000" />
-      <workItem from="1680364611544" duration="8251000" />
+      <workItem from="1680364611544" duration="9255000" />
+      <workItem from="1680373920425" duration="1002000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680349666289</created>
@@ -139,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680367311427</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="created test cases">
+      <created>1680373098941</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680373098941</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,6 +204,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
     <MESSAGE value="integrated DB and required classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrated DB and required classes" />
+    <MESSAGE value="created test cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="created test cases" />
   </component>
 </project>
