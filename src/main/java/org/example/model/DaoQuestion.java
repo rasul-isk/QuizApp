@@ -11,7 +11,6 @@ public class DaoQuestion {
         this.connection = connection;
     }
 
-    // Saves question to MySQL DB
     public void saveQuestion(Question question) throws SQLException {
         PreparedStatement statement = connection.prepareStatement(
                 "INSERT INTO question (id, topic, difficultyRank, content) VALUES (?, ?, ?, ?)"
@@ -34,7 +33,6 @@ public class DaoQuestion {
         }
     }
 
-    // Updates question by replacing it
     public void updateQuestion(Question question) throws SQLException {
         PreparedStatement statement = connection.prepareStatement(
                 "UPDATE question SET topic=?, difficultyRank=?, content=? WHERE id=?"
@@ -63,8 +61,13 @@ public class DaoQuestion {
         }
     }
 
-    // Deletes question
     public void deleteQuestion(Question question) throws SQLException {
+        PreparedStatement deleteResponseStatement = connection.prepareStatement(
+                "DELETE FROM response WHERE question_id=?"
+        );
+        deleteResponseStatement.setInt(1, question.getId());
+        deleteResponseStatement.executeUpdate();
+
         PreparedStatement statement = connection.prepareStatement(
                 "DELETE FROM question WHERE id=?"
         );
@@ -72,7 +75,6 @@ public class DaoQuestion {
         statement.executeUpdate();
     }
 
-    // Searches question by topic
     public List<Question> searchQuestionByTopic(String topic) throws SQLException {
         List<Question> questions = new ArrayList<>();
         PreparedStatement statement = connection.prepareStatement(
@@ -93,7 +95,6 @@ public class DaoQuestion {
         return questions;
     }
 
-    // Gets responses for chosen question
     private List<Response> getResponsesForQuestion(int questionId) throws SQLException {
         List<Response> responses = new ArrayList<>();
         PreparedStatement statement = connection.prepareStatement(
@@ -114,7 +115,16 @@ public class DaoQuestion {
         return responses;
     }
 
-    // Closes database connection
+    public void deleteAllRows() throws SQLException {
+        String sqlDeleteResponses = "DELETE FROM response";
+        String sqlDeleteQuestions = "DELETE FROM question";
+
+        PreparedStatement dropResponses = connection.prepareStatement(sqlDeleteResponses);
+        PreparedStatement dropQuestions = connection.prepareStatement(sqlDeleteQuestions);
+        dropResponses.executeUpdate();
+        dropQuestions.executeUpdate();
+    }
+
     public void close() throws SQLException {
         connection.close();
     }

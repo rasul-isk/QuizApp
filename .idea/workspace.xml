@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9cbea11c-a693-482f-9e54-7bcbba966910" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Relevant files/mysql-connector-j-8.0.32.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Relevant files/quiz_app.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/DaoQuestion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Question.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Response.java" afterDir="false" />
+    <list default="true" id="9cbea11c-a693-482f-9e54-7bcbba966910" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/model/DaoQuestionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/DaoQuestion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/DaoQuestion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/model/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/model/Response.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -48,6 +47,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "jdk.selected.JAVA_MODULE": "corretto-17",
     "last_opened_file_path": "D:/Everything/Programming/Java/QuizApp/Relevant files/mysql-connector-j-8.0.32.jar",
     "nodejs_package_manager_path": "npm",
@@ -62,7 +63,15 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="QuizApp" />
@@ -76,9 +85,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DaoQuestionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="QuizApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.model" />
+      <option name="MAIN_CLASS_NAME" value="org.example.model.DaoQuestionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DaoQuestionTest" />
       </list>
     </recent_temporary>
   </component>
@@ -91,7 +116,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680349567831</updated>
       <workItem from="1680349570175" duration="1918000" />
-      <workItem from="1680364611544" duration="2640000" />
+      <workItem from="1680364611544" duration="8251000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680349666289</created>
@@ -107,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680349877908</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="integrated DB and required classes">
+      <created>1680367311427</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680367311427</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +148,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="integrated DB and required classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="integrated DB and required classes" />
   </component>
 </project>

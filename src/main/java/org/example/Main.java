@@ -6,37 +6,34 @@ import org.example.model.Response;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        //config file
-        String url = "jdbc:mysql://localhost:3306/quiz_app";
-        String username = "root";
-        String password = "";
 
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            //config file
+            String url = "jdbc:mysql://localhost:3306/quiz_app";
+            String username = "root";
+            String password = "";
+
             Connection connection = DriverManager.getConnection(url, username, password);
-            DaoQuestion daoQuestion = new DaoQuestion(connection);
-            Response response1 = new Response(1, "Mars", false);
-            Response response2 = new Response(2, "Jupiter", true);
-            Response response3 = new Response(3, "Earth", false);
-            Response response4 = new Response(4, "Pluto", false);
-            List<Response> responses = new ArrayList<>();
-            responses.add(response1);
-            responses.add(response2);
-            responses.add(response3);
-            responses.add(response4);
-            Question q1 = new Question(1, "physics", 5, "Which planet has the strongest gravitational force ?", responses);
-            daoQuestion.saveQuestion(q1);
 
-            daoQuestion.close();
-
-        } catch (Exception e) {
-            System.out.println(e);
-
+            if (connection != null) {
+                System.out.println("Connection with MySQL DB established.");
+            }
+        } catch (ClassNotFoundException e) {
+            System.out.println("MySQL JDBC driver not found.");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Connection failed.");
+            e.printStackTrace();
         }
     }
 }
