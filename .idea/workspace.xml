@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cbea11c-a693-482f-9e54-7bcbba966910" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,12 +79,6 @@
       <item itemvalue="Application.org.example.Main" />
       <item itemvalue="JUnit.DaoQuestionTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.org.example.Main" />
-        <item itemvalue="JUnit.DaoQuestionTest" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -98,6 +93,7 @@
       <workItem from="1680373920425" duration="1329000" />
       <workItem from="1680417362402" duration="236000" />
       <workItem from="1680417613307" duration="268000" />
+      <workItem from="1680418209353" duration="1080000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1680349666289</created>
